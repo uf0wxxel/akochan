@@ -18,16 +18,16 @@ jobs:
       uses: egor-tensin/build-boost@v1
       with:
         version: 1.70.0
-        libraries: container system thread
+        libraries: container headers system thread
         platform: x64
         configuration: Release
         static: 1
         static-runtime: 1
     - name: make lib
-      run: make -f Makefile_Linux BOOST_LIB_PATH=${{steps.boost.outputs.root}}
+      run: make -f Makefile_Linux BOOST_LIB_PATH=${{steps.boost.outputs.librarydir}}
       working-directory: ai_src
     - name: make
-      run: make -f Makefile_Linux BOOST_LIB_PATH=${{steps.boost.outputs.root}}
+      run: make -f Makefile_Linux BOOST_LIB_PATH=${{steps.boost.outputs.librarydir}}
     - uses: actions/upload-artifact@v3
       with:
         name: linux-old
