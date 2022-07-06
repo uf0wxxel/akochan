@@ -1,6 +1,6 @@
 COMPILER = g++
 NPROCS = 4
-CFLAGS = -g -MMD -MP -std=c++11 -O3 -fopenmp -DWINSTD -DNPROCS=$(NPROCS) -I$(BOOST_ROOT_PATH)
+CFLAGS = -g0 -MMD -MP -std=c++11 -O3 -fopenmp -DWINSTD -DNPROCS=$(NPROCS) -I$(BOOST_ROOT_PATH)
 WFLAGS = -pedantic -Wignored-qualifiers -Wreturn-type -Wmaybe-uninitialized -Wbool-compare -Wshadow -Wunused-but-set-variable -Wunused-variable
 LIBS	= -lboost_system -lws2_32 -L$(BOOST_LIB_PATH)
 
