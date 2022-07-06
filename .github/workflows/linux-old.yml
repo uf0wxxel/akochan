@@ -18,7 +18,7 @@ jobs:
       uses: egor-tensin/build-boost@v1
       with:
         version: 1.70.0
-        libraries: filesystem program_options system
+        libraries: container system thread
         platform: x64
         configuration: Release
         static: 1
