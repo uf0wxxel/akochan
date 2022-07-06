@@ -30,10 +30,10 @@ jobs:
     - name: make
       run: make BOOST_ROOT_PATH=${{steps.boost.outputs.root}} BOOST_LIB_PATH=${{steps.boost.outputs.librarydir}}
     - name: copy mingw libs
-      run: cmd mingw-libs-copy.bat
+      run: cmd /c mingw-libs-copy.bat
     - uses: actions/upload-artifact@v3
       with:
-        name: linux-old
+        name: windows
         path: |
           ai.dll
           system.exe
