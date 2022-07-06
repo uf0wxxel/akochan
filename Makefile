@@ -1,5 +1,5 @@
 COMPILER = g++
-CFLAGS = -g -MMD -MP -std=c++11 -O3 -fopenmp -DWINSTD
+CFLAGS = -g -MMD -MP -std=c++11 -O3 -fopenmp -DWINSTD -static-libgcc -static-libstdc++
 WFLAGS = -pedantic -Wignored-qualifiers -Wreturn-type -Wmaybe-uninitialized -Wbool-compare -Wshadow -Wunused-but-set-variable -Wunused-variable
 
 OPTGTK = 
