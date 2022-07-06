@@ -1,9 +1,9 @@
 COMPILER = g++
-CFLAGS = -g -MMD -MP -std=c++11 -O3 -fopenmp -DWINSTD
+CFLAGS = -g -MMD -MP -std=c++11 -O3 -fopenmp -DWINSTD -I$(BOOST_ROOT_PATH)
 WFLAGS = -pedantic -Wignored-qualifiers -Wreturn-type -Wmaybe-uninitialized -Wbool-compare -Wshadow -Wunused-but-set-variable -Wunused-variable
 
 OPTGTK = 
-LIBS = -lboost_system-mgw62-mt-x64-1_70 -lws2_32 -L./ -lai
+LIBS = -lboost_system -lws2_32 -L./ -lai -L$(BOOST_LIB_PATH)
 
 SRCDIR = .
 SHARE_DIR = share
