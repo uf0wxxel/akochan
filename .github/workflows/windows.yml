@@ -13,10 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up MinGW
-      uses: egor-tensin/setup-mingw@v2
-      with:
-        platform: x64
     - name: Build Boost
       id: boost
       uses: egor-tensin/build-boost@v1
