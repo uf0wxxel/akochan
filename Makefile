@@ -1,5 +1,5 @@
 COMPILER = g++
-CFLAGS = -g -MMD -MP -std=c++11 -O3 -fopenmp -DWINSTD -I$(BOOST_ROOT_PATH)
+CFLAGS = -g0 -MMD -MP -std=c++11 -O3 -fopenmp -DWINSTD -I$(BOOST_ROOT_PATH)
 WFLAGS = -pedantic -Wignored-qualifiers -Wreturn-type -Wmaybe-uninitialized -Wbool-compare -Wshadow -Wunused-but-set-variable -Wunused-variable
 
 OPTGTK = 
