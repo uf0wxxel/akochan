@@ -33,5 +33,5 @@ jobs:
       with:
         name: linux-old
         path: |
-          libai.so
+          ai.dll
           system.exe
