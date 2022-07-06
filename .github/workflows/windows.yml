@@ -13,6 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Set up MinGW
+      uses: egor-tensin/setup-mingw@v2
+      with:
+        platform: x64
     - name: Build Boost
       id: boost
       uses: egor-tensin/build-boost@v1
@@ -25,10 +29,10 @@ jobs:
         static: 1
         static-runtime: 1
     - name: make lib
-      run: make -f Makefile_Linux BOOST_ROOT_PATH=${{steps.boost.outputs.root}} BOOST_LIB_PATH=${{steps.boost.outputs.librarydir}}
+      run: make BOOST_ROOT_PATH=${{steps.boost.outputs.root}} BOOST_LIB_PATH=${{steps.boost.outputs.librarydir}}
       working-directory: ai_src
     - name: make
-      run: make -f Makefile_Linux BOOST_ROOT_PATH=${{steps.boost.outputs.root}} BOOST_LIB_PATH=${{steps.boost.outputs.librarydir}}
+      run: make BOOST_ROOT_PATH=${{steps.boost.outputs.root}} BOOST_LIB_PATH=${{steps.boost.outputs.librarydir}}
     - uses: actions/upload-artifact@v3
       with:
         name: linux-old
