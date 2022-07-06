@@ -1,5 +1,5 @@
 COMPILER = g++
-CFLAGS = -g0 -MMD -MP -std=c++11 -O3 -fopenmp -pthread -Wl,-rpath '-Wl,$$ORIGIN' -include ./ai_src/force_link_glibc_2.14.h -static-libgcc -static-libstdc++
+CFLAGS = -g0 -MMD -MP -std=c++11 -O3 -fopenmp -pthread -Wl,-rpath '-Wl,$$ORIGIN' -include ./ai_src/force_link_glibc_2.14.h -static-libgcc -static-libstdc++ -I$(BOOST_ROOT_PATH)
 WFLAGS = -pedantic -Wignored-qualifiers -Wreturn-type -Wmaybe-uninitialized -Wbool-compare -Wshadow -Wunused-but-set-variable -Wunused-variable
 
 OPTGTK = 
