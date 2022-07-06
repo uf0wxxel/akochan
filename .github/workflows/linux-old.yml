@@ -1,0 +1,26 @@
+name: Old Linux Support
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: make lib
+      run: make -f Makefile_Linux
+      working-directory: ai_src
+    - name: make
+      run: make -f Makefile_Linux
+    - uses: actions/upload-artifact@v3
+      with:
+        name: linux-old
+        path: |
+          libai.so
+          system.exe
