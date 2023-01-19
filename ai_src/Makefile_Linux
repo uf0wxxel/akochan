@@ -1,5 +1,5 @@
 COMPILER = g++
-NPROCS = 8
+NPROCS = 128
 CFLAGS = -g0 -MMD -MP -std=c++11 -O3 -fopenmp -pthread -fPIC -DNPROCS=$(NPROCS) -mcmodel=medium -Wl,-rpath '-Wl,$$ORIGIN' -include ./force_link_glibc_2.14.h -static-libgcc -static-libstdc++ -I$(BOOST_ROOT_PATH)
 WFLAGS = -pedantic -Wignored-qualifiers -Wreturn-type -Wmaybe-uninitialized -Wbool-compare -Wshadow -Wunused-but-set-variable -Wunused-variable
 LIBS = -lboost_system -L$(BOOST_LIB_PATH)
